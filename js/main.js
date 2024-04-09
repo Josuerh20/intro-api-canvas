@@ -185,7 +185,22 @@ function draw_path() {
     ctx.arcTo(x, y, x, y + radius, radius);
     ctx.stroke();
   }
-
+  function draw_Path2D() {
+    const canvas = document.getElementById("canvas_Path2D");
+    if (canvas.getContext) {
+      const ctx = canvas.getContext("2d");
+  
+      const rectangle = new Path2D();
+      rectangle.rect(10, 10, 50, 50);
+  
+      const circle = new Path2D();
+      circle.arc(100, 35, 25, 0, 2 * Math.PI);
+  
+      ctx.stroke(rectangle);
+      ctx.fill(circle);
+    }
+  }
+  draw_Path2D()
   draw_cuadrado();
   draw_path();
   draw_lineas();
